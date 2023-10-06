@@ -11,6 +11,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import {Routes, Route } from 'react-router-dom'
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Reviews from './pages/Reviews';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Row className='map'>
         <Routes>
         <Route path="/" element={<Map />}/>
+        <Route path="/reviews" element={<Reviews />}/>
         <Route path="/contact" element={<Contact />}/>
         <Route path="/about" element={<About />}/>
         </Routes>

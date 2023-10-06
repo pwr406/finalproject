@@ -1,18 +1,11 @@
-
-.map-container {
-  height: 100vh;
-  max-width: 100%;
-  overflow: hidden;
-  }
-
-  .parkCard {
+.parkCard {
     height: 100%;
     
   }
   
   .parkCardPhoto {
     max-width: 100%;
-    height: auto;
+    height: 50%;
    
   }
   

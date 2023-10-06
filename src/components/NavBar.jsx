@@ -11,6 +11,7 @@ function NavBar() {
           <Navbar.Brand href="#home">Missoula Parks</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/">Map</Nav.Link>
+            <Nav.Link as={NavLink} to="/reviews">Reviews</Nav.Link>
             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
             <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
           </Nav>
