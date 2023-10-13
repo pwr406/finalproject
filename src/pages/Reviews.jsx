@@ -6,9 +6,9 @@ import Button from 'react-bootstrap/Button';
 import './Reviews.css';
 import ReviewAPI from '../components/ReviewApi'
 import ParksAPI from '../components/ParksApi'
-import CreateReviewForm from '../components/CreateReviewForm'
+import CreateReviewForm from '../components/ReviewForm'
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import ReviewList from '../components/ReviewList';
+import ReviewList from '../components/ReviewDisplay';
 
 export default function Reviews() {
   const [reviewList, setReviewList] = useState([])
@@ -16,15 +16,26 @@ export default function Reviews() {
   const [show, setShow] = useState(false);
   const [selectedParkId, setSelectedParkId] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [parkTitle, setParkTitle] = useState('');
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    handleShowModal(selectedParkId)
+  }
+
+  const handleCloseNoSubmit = () => {
+    setShow(false);
+  }
+
   const handleShow = (parkId) => {
     setSelectedParkId(parkId);
+    setParkTitle(parkList.find((park) => park.id === parkId).Title)
     setShow(true);
   };
 
   const handleShowModal = (parkId) => {
     setSelectedParkId(parkId);
+    setParkTitle(parkList.find((park) => park.id === parkId).Title)
     setShowModal(true);
   }
 
@@ -65,6 +76,15 @@ export default function Reviews() {
     setReviewList([...reviewList, newReview])
   }
 
+  const updateReview = async (updatedReview) => {
+    const response = await fetch(ReviewAPI + updatedReview.id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedReview)
+    })
+    setReviewList(reviewList.map(review => review.id === updatedReview.id ? { ...review, ...updatedReview } : review))
+  }
+
 
   return (
     <>
@@ -85,15 +105,16 @@ export default function Reviews() {
           </Col>
         ))}
       </Row>
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleCloseNoSubmit}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Leave a review</Offcanvas.Title>
+          <Offcanvas.Title>Leave a review for {parkTitle}</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <CreateReviewForm createReview={createReview} selectedParkId={selectedParkId} handleClose={handleClose} />
+          <CreateReviewForm createReview={createReview} selectedParkId={selectedParkId} handleClose={handleClose} reviewList={reviewList} updateReview={updateReview} />
         </Offcanvas.Body>
       </Offcanvas>
-      <ReviewList showModal={showModal} setShowModal={setShowModal} selectedParkId={selectedParkId} reviews={reviewList} />
+      <ReviewList showModal={showModal} setShowModal={setShowModal} selectedParkId={selectedParkId} reviews={reviewList} deleteReview={deleteReview} updateReview={updateReview} handleClose={handleClose} handleShowModal={handleShowModal} createReview={createReview} parkList={parkList} parkTitle={parkTitle}
+      />
     </>
   );
 }

@@ -57,13 +57,6 @@
   ],
   "reviews": [
     {
-      "parkId": 2,
-      "name": "Paul Ryan",
-      "rating": "🌟🌟🌟🌟🌟",
-      "review": "We absolutely love this park! There is so much fun stuff to do, including feeding the dino! ",
-      "id": 1
-    },
-    {
       "parkId": 1,
       "name": "John Reviewer",
       "rating": "🌟🌟",
@@ -72,10 +65,31 @@
     },
     {
       "parkId": 2,
-      "name": "Missoula Park Expert",
+      "name": "Paul Ryan",
       "rating": "🌟🌟🌟🌟🌟",
-      "review": "Without a doubt, one of the best parks in Missoula!",
+      "review": "This is one of the best parks in Missoula! My daughter loves to play on the dinosaur and feed him pinecones!",
       "id": 3
+    },
+    {
+      "parkId": 3,
+      "name": "My dawg",
+      "rating": "🌟🌟🌟🌟🌟",
+      "review": "Sniffed a lot of things. BARK BARK!",
+      "id": 4
+    },
+    {
+      "parkId": 1,
+      "name": "Dude the Dude",
+      "rating": "🌟🌟🌟🌟",
+      "review": "eh, not as great as I thought. ",
+      "id": 5
+    },
+    {
+      "parkId": 8,
+      "name": "John Walker",
+      "rating": "🌟🌟🌟🌟",
+      "review": "This is my new park. ",
+      "id": 7
     }
   ]
 }
