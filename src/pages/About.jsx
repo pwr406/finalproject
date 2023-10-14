@@ -17,7 +17,7 @@ export default function About () {
           <p>Thank you for visiting my site. This was created for my final project
             for the Montana Code School Front-End Developer Course. I still have a long
             way to go, but I am happy with how this turned out. I was inspired by my wonderful
-            daugther and her love of Missoula's great parks. Like most projects, I had more in 
+            daughter and her love of Missoula's great parks. Like most projects, I had more in 
             mind, but time quickly got away from me. I had never worked with Mapbox before and
             a lot of time was spent reading through that documentation and learning how to work with
             MapBox GL JS within a React Application. I was hoping to allow users to mark 
@@ -32,11 +32,11 @@ export default function About () {
           </p>
           <p>
             The majority of my time was spent on the Map page and the Reviews page. I think there are some 
-            neat little elements to the Review Page that I'm very proud of accomplishing. When you click "Read Reivews"
-            the name of the Park is progmatically displayed. If there are no reviews for the park, you are given the option
+            neat little elements to the Review Page that I'm very proud of accomplishing. When you click "Read Reviews"
+            the name of the Park is displayed. If there are no reviews for the park, you are given the option
             to be the first to leave one. The name of the park you are reviewing is brought in when "Leave A Review" is pressed,
             and I set up two different functions to handle when the form is closed; one for if a review is left, and one if the Offcanvas
-            elment is closed without submitting anything. 
+            element is closed without submitting anything. 
           </p>
           <p> 
             Thank you for taking a look! I would love to hear any and all feedback. I began my journey into Front-End Development 18 weeks ago
