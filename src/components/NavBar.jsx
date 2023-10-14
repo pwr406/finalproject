@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 
+//pretty basic NavBar - added sticky to make it stick while scrolling - aligned items in the center and put the brand between the two links for style.
 function NavBar() {
   return (
     <>

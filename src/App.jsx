@@ -21,7 +21,7 @@ function App() {
       <NavBar />
 
 
-      <Container fluid>
+      <Container fluid className="app-container">
         <Row>
           <Routes>
             <Route path="/" element={<Map />} />

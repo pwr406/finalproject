@@ -11,6 +11,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import ReviewList from '../components/ReviewDisplay';
 
 export default function Reviews() {
+  //state to control a lot of things - these get passed all over the app.
   const [reviewList, setReviewList] = useState([])
   const [parkList, setParkList] = useState([])
   const [show, setShow] = useState(false);
@@ -18,27 +19,30 @@ export default function Reviews() {
   const [showModal, setShowModal] = useState(false);
   const [parkTitle, setParkTitle] = useState('');
 
+  //function to handle the close of review forms
   const handleClose = () => {
     setShow(false);
     handleShowModal(selectedParkId)
   }
 
+  //function to handle the close of the form if submit isn't pressed.
   const handleCloseNoSubmit = () => {
     setShow(false);
   }
 
+  //function to handle showing review form
   const handleShow = (parkId) => {
     setSelectedParkId(parkId);
     setParkTitle(parkList.find((park) => park.id === parkId).Title)
     setShow(true);
   };
-
+  //function to handle showing modal that shows reviews
   const handleShowModal = (parkId) => {
     setSelectedParkId(parkId);
     setParkTitle(parkList.find((park) => park.id === parkId).Title)
     setShowModal(true);
   }
-
+  //fetching the reviews from API
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await fetch(ReviewAPI)
@@ -48,6 +52,7 @@ export default function Reviews() {
     fetchReviews()
   }, [])
 
+  //fectching the parks from API
   useEffect(() => {
     const fetchParks = async () => {
       const response = await fetch(ParksAPI)
@@ -57,6 +62,7 @@ export default function Reviews() {
     fetchParks()
   }, [])
 
+  //function to delete reviews from API 
   const deleteReview = async (idToDelete) => {
     const response = await fetch(ReviewAPI + idToDelete, {
       method: "DELETE"
@@ -64,6 +70,7 @@ export default function Reviews() {
     setReviewList(reviewList.filter(review => review.id !== idToDelete))
   }
 
+  //function to create reviews on API
   const createReview = async (reviewData) => {
     const response = await fetch(ReviewAPI, {
       method: "POST",
@@ -76,6 +83,7 @@ export default function Reviews() {
     setReviewList([...reviewList, newReview])
   }
 
+  //Function to update reviews on API
   const updateReview = async (updatedReview) => {
     const response = await fetch(ReviewAPI + updatedReview.id, {
       method: "PUT",
@@ -88,7 +96,7 @@ export default function Reviews() {
 
   return (
     <>
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={3} className="g-4 ms-0">
         {parkList.map((park) => (
           <Col key={park.id}>
             <Card className="parkCard" bg="dark" text="light">

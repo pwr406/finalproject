@@ -1,3 +1,4 @@
+/* CSS to control the image that goes into the MapBox Popup to make sure it fits correctly in the popup*/
 .popup_image {
     max-width: 100%;
     height: auto;

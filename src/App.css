@@ -1,5 +1,5 @@
 .map-container {
-  height: 100vh;
+  height: 91vh;
   max-width: 100%;
   overflow: hidden;
 }
@@ -20,11 +20,57 @@
 }
 
 .mapOuter {
-  height: 100vh;
+  height: 91vh;
 }
 
 .mapRow {
-  height: 100vh;
+  height: 91vh;
 }
 
+.about-container {
+  background-image: url('../assets/missoula.jpg');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 91vh;
+}
 
+.column-box {
+  background-color: rgba(253, 253, 253, 0.85);
+  padding: 10px;
+  margin: 10px;
+  height: 80%;
+ 
+
+
+}
+.column-box-image {
+  background-color: rgba(253, 253, 253, 0.75);
+
+  margin: 10px;
+
+}
+
+.column-box-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.app-container {
+  height: 91vh;
+}
+
+.contact-container {
+  background-image: url('../assets/contact.jpg');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 91vh;
+  text-align: center;
+}

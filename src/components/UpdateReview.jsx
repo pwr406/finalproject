@@ -2,7 +2,23 @@ import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import CreateReviewForm from './ReviewForm';
 
-export default function UpdateReview({ show, placement, handleCloseUpdateReview, reviewToEdit, reviews, updateReview, parkTitle }) {
+//component to update a review.
+// show, - prop to bring in showing the offcanvas element
+// placement, - where to display offcanvas
+// handleCloseUpdateReview, - how to close the updateReview if not submitted.
+// reviewToEdit, - which review to update
+// reviews, - list of reviews
+// updateReview, - function to update review
+// parkTitle - title of the park
+
+export default function UpdateReview({
+  show,
+  placement,
+  handleCloseUpdateReview,
+  reviewToEdit,
+  reviews,
+  updateReview,
+  parkTitle }) {
 
 
 
