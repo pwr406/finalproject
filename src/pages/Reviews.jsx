@@ -4,8 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import './Reviews.css';
-import ReviewAPI from '../components/ReviewApi'
-import ParksAPI from '../components/ParksApi'
+import reviewAPI from '../components/reviewApi'
+import parksAPI from '../components/parksApi'
 import CreateReviewForm from '../components/ReviewForm'
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import ReviewList from '../components/ReviewDisplay';
@@ -45,7 +45,7 @@ export default function Reviews() {
   //fetching the reviews from API
   useEffect(() => {
     const fetchReviews = async () => {
-      const response = await fetch(ReviewAPI)
+      const response = await fetch(reviewAPI)
       const data = await response.json()
       setReviewList(data)
     }
@@ -55,7 +55,7 @@ export default function Reviews() {
   //fectching the parks from API
   useEffect(() => {
     const fetchParks = async () => {
-      const response = await fetch(ParksAPI)
+      const response = await fetch(parksAPI)
       const data = await response.json()
       setParkList(data)
     }
@@ -64,7 +64,7 @@ export default function Reviews() {
 
   //function to delete reviews from API 
   const deleteReview = async (idToDelete) => {
-    const response = await fetch(ReviewAPI + idToDelete, {
+    const response = await fetch(reviewAPI + idToDelete, {
       method: "DELETE"
     })
     setReviewList(reviewList.filter(review => review.id !== idToDelete))
@@ -72,7 +72,7 @@ export default function Reviews() {
 
   //function to create reviews on API
   const createReview = async (reviewData) => {
-    const response = await fetch(ReviewAPI, {
+    const response = await fetch(reviewAPI, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function Reviews() {
 
   //Function to update reviews on API
   const updateReview = async (updatedReview) => {
-    const response = await fetch(ReviewAPI + updatedReview.id, {
+    const response = await fetch(reviewAPI + updatedReview.id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedReview)

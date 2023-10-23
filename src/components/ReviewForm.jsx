@@ -28,7 +28,7 @@ export default function CreateReviewForm({
   //effect to load the data when you are editing a review - brings in 
   //values to the form.
   useEffect(() => {
-    async function loadData() {
+    function loadData() {
       if (reviewToEdit) {
         setNameState(reviewToEdit.name);
         setRatingState(reviewToEdit.rating);

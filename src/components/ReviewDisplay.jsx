@@ -33,7 +33,7 @@ export default function ReviewList({
   // State to manage the update review modal
   const [updateReviewShow, setUpdateReviewShow] = useState(false);
   const [reviewId, setReviewId] = useState('')
-  const [reviewToEdit, setReviewToEdit] = useState(null);
+
 
 
   // function to close the modal 
@@ -41,11 +41,10 @@ export default function ReviewList({
 
   // function to open the update review modal and set the review to edit.
   const handleShowUpdateReview = (reviewId) => {
-    const editReview = reviews.find((review) => review.id === reviewId)
     setUpdateReviewShow(true);
     setReviewId(reviewId)
     handleCloseModal();
-    setReviewToEdit(editReview)
+  
   }
 
   //function to close the update review modal.
@@ -110,7 +109,7 @@ export default function ReviewList({
         show={updateReviewShow}
         handleShowUpdateReview={handleShowUpdateReview}
         handleCloseUpdateReview={handleCloseUpdateReview}
-        reviewToEdit={reviewToEdit}
+        reviewToEdit={reviews.find(r => r.id === reviewId)}
         reviews={reviews}
         updateReview={updateReview}
         handleClose={handleClose}
