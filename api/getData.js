@@ -3,8 +3,10 @@ export default async function handler(request, response) {
   
     try {
       const fetchData = await fetch(url);
-      const jsonData = await fetchData.json(); // Convert the fetched data to JSON
+      const rawText = await fetchData.text(); // Convert the fetched data to JSON
   
+        console.log('Fetched text:', rawText)
+
       response.status(200).json(jsonData); // Sending the JSON data as a response
     } catch (error) {
       console.error('Error fetching or parsing data:', error);
