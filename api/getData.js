@@ -1,4 +1,3 @@
-import fetch from 'node-fetch'; // Ensure you've imported fetch or use any other HTTP library
 
 export default async function handler(req, res) {
   const url = 'https://raw.githubusercontent.com/pwr406/finalproject/main/db.json?token=GHSAT0AAAAAACI65HSHP2TNWK72QAPCB5BMZKJXTAA';
