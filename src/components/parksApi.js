@@ -1,4 +1,4 @@
 //component to hold parks API location
-const parksAPI = "http://localhost:3000/parks";
+const parksAPI = 'https://missoula-parks.vercel.app/api/getDataParks/';
 
 export default parksAPI;

@@ -47,7 +47,8 @@ export default function Reviews() {
     const fetchReviews = async () => {
       const response = await fetch(reviewAPI)
       const data = await response.json()
-      setReviewList(data)
+      setReviewList(data) 
+      console.log(data)
     }
     fetchReviews()
   }, [])
@@ -59,6 +60,7 @@ export default function Reviews() {
       const data = await response.json()
       setParkList(data)
     }
+    
     fetchParks()
   }, [])
 
