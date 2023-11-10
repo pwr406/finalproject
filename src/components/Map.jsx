@@ -6,7 +6,7 @@ import './Map.css'
 import { useNavigate } from 'react-router-dom';
 
 // Mapbox token for API
-mapboxgl.accessToken = 'pk.eyJ1Ijoic211cmZzdG9tcGVyIiwiYSI6ImNsbjR4dHE1ODAzYmsyeG53anhpeW43OHcifQ.fMzvf9HQTTsZOdEd1zxSUQ';
+mapboxgl.accessToken = process.env.MAP_BOX_KEY;
 
 export default function Map() {
   // various states to control the map
