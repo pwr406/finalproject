@@ -82,7 +82,7 @@ export default function Reviews() {
       body: JSON.stringify(reviewData),
     })
     const newReview = await response.json();
-    setReviewList([...reviewList, newReview])
+    setReviewList([...reviewList, reviewData])
   }
 
   //Function to update reviews on API
